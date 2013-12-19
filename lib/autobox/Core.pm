@@ -359,7 +359,7 @@ Like the C<x> operator, repeats a string C<$n> times.
 
 =head3 I/O Methods
 
-These are methods having to do with input and ouptut, not filehandles.
+These are methods having to do with input and output, not filehandles.
 
 =head4 print
 
@@ -828,7 +828,7 @@ Exchanges values for keys in a hash:
     my %things = ( foo => 1, bar => 2, baz => 5 );
     my %flipped = %things->flip; # { 1 => foo, 2 => bar, 5 => baz }
 
-If there is more than one occurence of a certain value, any one of the
+If there is more than one occurrence of a certain value, any one of the
 keys may end up as the value.  This is because of the random ordering
 of hash keys.
 
@@ -1026,7 +1026,7 @@ Perl 5 had the beginnings of autoboxing with filehandles:
 
 Here, C<read> is a method on a filehandle we opened but I<never blessed>.
 This lets us say things like C<< $file->print(...) >> rather than the often
-ambagious C<< print $file ... >>.
+ambiguous C<< print $file ... >>.
 
 To many people, much of the time, it makes more conceptual sense as well.
 
@@ -1342,7 +1342,7 @@ sub downto  {
 #   }
 #}
 
-# doesn't minipulate scalars but works on scalars
+# doesn't manipulate scalars but works on scalars
 
 sub print { CORE::print @_; }
 sub say   { CORE::print @_, "\n"}
@@ -1371,7 +1371,7 @@ sub xor  { $_[0] xor $_[1]; }
 sub repeat  { $_[0] x $_[1]; }
 sub rpt  { $_[0] x $_[1]; }
 
-# sub bless (\%$)   { CORE::bless $_[0], $_[1] } # HASH, ARRAY, CODE already have a bless() and blessing a non-reference works (autobox finds the reference in the pad or stash!).  "can't bless a non-referenc value" for non-reference lexical and package scalars.  this would work for (\$foo)->bless but then, unlike arrays, we couldn't find the reference to the variable again later so there's not much point I can see.
+# sub bless (\%$)   { CORE::bless $_[0], $_[1] } # HASH, ARRAY, CODE already have a bless() and blessing a non-reference works (autobox finds the reference in the pad or stash!).  "can't bless a non-reference value" for non-reference lexical and package scalars.  this would work for (\$foo)->bless but then, unlike arrays, we couldn't find the reference to the variable again later so there's not much point I can see.
 
 # from perl5i:
 
